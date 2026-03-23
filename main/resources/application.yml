@@ -1,0 +1,43 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: oauth2-client
+
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+
+  security:
+    oauth2:
+      client:
+        registration:
+
+          # ===== OPTION 1 : Google OAuth2 =====
+          # Remplace client-id et client-secret par tes vraies valeurs Google Cloud
+          google:
+            client-id: YOUR_GOOGLE_CLIENT_ID
+            client-secret: YOUR_GOOGLE_CLIENT_SECRET
+            scope:
+              - openid
+              - profile
+              - email
+
+          # ===== OPTION 2 : Keycloak (décommente si tu utilises Keycloak) =====
+          # keycloak:
+          #   client-id: spring-oauth-client
+          #   client-secret: TON_CLIENT_SECRET_KEYCLOAK
+          #   authorization-grant-type: authorization_code
+          #   redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+          #   scope:
+          #     - openid
+          #     - profile
+          #     - email
+
+        provider:
+          google:
+            issuer-uri: https://accounts.google.com
+
+          # keycloak:
+          #   issuer-uri: http://localhost:8180/realms/ens-realm
