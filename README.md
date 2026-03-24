@@ -129,7 +129,7 @@ src/main/resources/
 
 ## 👨‍💻 Auteur
 
-**Ayoub**  
+**Ayoub Moubssite**  
 TP13 — OAuth2 / OpenID Connect avec Google et Spring Boot
 
 ---
